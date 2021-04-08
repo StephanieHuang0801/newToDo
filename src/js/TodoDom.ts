@@ -1,13 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2021-04-08 22:13:22
- * @LastEditTime: 2021-04-08 22:30:13
+ * @LastEditTime: 2021-04-08 22:39:06
  * @LastEditors: Please set LastEditors
  * @Description: 操作DOM
  * @FilePath: \newToDo\src\js\TodoDom.ts
  */
 import { TodoTemplate } from './templates'
 import { ITodoData } from './typings'
+import { findParentNode } from './utils'
 export class TodoDom extends TodoTemplate {
     private todoWrap: HTMLElement
     constructor(todoWrap: HTMLElement) {
@@ -19,5 +20,14 @@ export class TodoDom extends TodoTemplate {
         oItem.className = 'todo-item'
         oItem.innerHTML = this.todoTemplate(todo)
         this.todoWrap.appendChild(oItem)
+    }
+    protected removeItem(target: HTMLElement) {
+        const oParentNode: HTMLElement = findParentNode(target, 'todo-item')
+        oParentNode.remove()
+    }
+    protected changeCompleted(target: HTMLElement, completed: boolean) {
+        const oParentNode: HTMLElement = findParentNode(target, 'todo-item')
+        const oContent: HTMLElement = oParentNode.getElementsByTagName('span')[0]
+        oContent.style.textDecoration = completed ? 'line-through' : 'none'
     }
 }
