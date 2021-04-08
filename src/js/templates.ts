@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-04-08 22:19:58
- * @LastEditTime: 2021-04-08 22:24:50
+ * @LastEditTime: 2021-04-08 23:00:30
  * @LastEditors: Please set LastEditors
  * @Description: dom模板
  * @FilePath: \newToDo\src\js\templates.ts
@@ -15,7 +15,7 @@ export class TodoTemplate {
         return `
             <input type="checkbox" ${completed ? 'checked' : ''} data-id=${id} />
             <span style="text-decoration:${completed ? 'line-through' : 'none'}">${content}</span>
-            <button data-id=${id}></button>
+            <button data-id=${id}>删除</button>
         `
     }
 }

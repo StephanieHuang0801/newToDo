@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-04-08 21:54:39
- * @LastEditTime: 2021-04-08 22:42:19
+ * @LastEditTime: 2021-04-08 23:00:13
  * @LastEditors: Please set LastEditors
  * @Description: 处理数据
  * @FilePath: \newToDo\src\js\TodoEvent.ts
@@ -21,7 +21,7 @@ export default class TodoEvent extends TodoDom {
         const _todo = this.todoData.find((item: ITodoData) => {
             return item.content === todo.content
         })
-        if (_todo) {
+        if (!_todo) {
             this.todoData.push(todo)
             this.addItem(todo)
             return
