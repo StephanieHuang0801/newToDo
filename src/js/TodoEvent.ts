@@ -1,17 +1,19 @@
 /*
  * @Author: your name
  * @Date: 2021-04-08 21:54:39
- * @LastEditTime: 2021-04-08 22:05:17
+ * @LastEditTime: 2021-04-08 22:16:43
  * @LastEditors: Please set LastEditors
  * @Description: 处理数据
  * @FilePath: \newToDo\src\js\TodoEvent.ts
  */
 import { ITodoData } from './typings'
-export default class TodoEvent {
+import { TodoDom } from './TodoDom'
+export default class TodoEvent extends TodoDom {
 
     private todoData: ITodoData[]
 
-    constructor(todoData: ITodoData[]) {
+    constructor(todoData: ITodoData[], todoDom: HTMLElement) {
+        super(todoDom)
         this.todoData = todoData
     }
 
