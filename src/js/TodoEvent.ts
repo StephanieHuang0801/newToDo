@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-04-08 21:54:39
- * @LastEditTime: 2021-04-08 23:00:13
+ * @LastEditTime: 2021-04-11 13:45:58
  * @LastEditors: Please set LastEditors
  * @Description: 处理数据
  * @FilePath: \newToDo\src\js\TodoEvent.ts
@@ -15,6 +15,12 @@ export default class TodoEvent extends TodoDom {
     constructor(todoData: ITodoData[], todoDom: HTMLElement) {
         super(todoDom)
         this.todoData = todoData
+
+        this.init()
+    }
+
+    private init() {
+        this.initList(this.todoData)
     }
 
     public addTodo(todo: ITodoData): undefined | number {

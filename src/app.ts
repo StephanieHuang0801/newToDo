@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-04-08 21:40:58
- * @LastEditTime: 2021-04-11 13:31:42
+ * @LastEditTime: 2021-04-11 13:47:21
  * @LastEditors: Please set LastEditors
  * @Description: 模块 立即执行函数
  * @FilePath: \newToDo\src\app.ts
@@ -15,7 +15,23 @@ import TodoEvent from './js/TodoEvent'
 
         const oTodoList: HTMLElement = document.querySelector('.todo-list')
 
-        const todoData: ITodoData[] = []
+        const todoData: ITodoData[] = [
+            {
+                id: 1,
+                content: '学习',
+                completed: false
+            },
+            {
+                id: 2,
+                content: '改bug',
+                completed: false
+            },
+            {
+                id: 3,
+                content: '吃饭睡觉',
+                completed: true
+            },
+        ]
 
         const todoEvent: TodoEvent = new TodoEvent(todoData, oTodoList) // 实例和类不要重名
 
