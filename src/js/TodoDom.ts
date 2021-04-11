@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-04-08 22:13:22
- * @LastEditTime: 2021-04-11 13:37:10
+ * @LastEditTime: 2021-04-11 13:39:18
  * @LastEditors: Please set LastEditors
  * @Description: 操作DOM
  * @FilePath: \newToDo\src\js\TodoDom.ts
@@ -17,11 +17,14 @@ export class TodoDom extends TodoTemplate {
     }
     protected initList(todoData: ITodoData[]) {
         if (todoData.length) {
+            const oFrag: DocumentFragment = document.createDocumentFragment()
             todoData.map((todo: ITodoData) => {
                 const oItem: HTMLElement = document.createElement('div')
                 oItem.className = "todo-item"
                 oItem.innerHTML = this.todoTemplate(todo)
+                oFrag.appendChild(oItem)
             })
+            this.todoWrap.appendChild(oFrag)
         }
     }
     protected addItem(todo: ITodoData) {
