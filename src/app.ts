@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-04-08 21:40:58
- * @LastEditTime: 2021-04-08 23:06:57
+ * @LastEditTime: 2021-04-11 13:31:42
  * @LastEditors: Please set LastEditors
  * @Description: 模块 立即执行函数
  * @FilePath: \newToDo\src\app.ts
@@ -38,6 +38,7 @@ import TodoEvent from './js/TodoEvent'
                     alert('列表项已存在')
                     return
                 }
+                oInput.value = ''
             }
         }
         const handleListClick = (e: MouseEvent): void => {
