@@ -1,15 +1,21 @@
 /*
  * @Author: your name
  * @Date: 2021-04-08 22:32:15
- * @LastEditTime: 2021-04-08 22:33:46
+ * @LastEditTime: 2021-04-11 13:43:12
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \newToDo\src\js\utils.ts
  */
 export const findParentNode = (target: HTMLElement, className: string) => {
-    while(target = target.parentNode as HTMLElement){
-        if(target.className === className){
+    while (target = target.parentNode as HTMLElement) {
+        if (target.className === className) {
             return target
         }
     }
+}
+export const createItem = (tagName: string, className: string, todoItem: string) => {
+    const oItem: HTMLElement = document.createElement(tagName)
+    oItem.className = className
+    oItem.innerHTML = todoItem
+    return oItem
 }
